@@ -30,19 +30,16 @@ function maskerAll() {
 	var elDuration = 12;
 	tl.add("el");
 	var imgCorn = maskerItem("mask-corn");
-	tl.from(imgCorn, { duration: elDuration, x: "+=" + imgCorn.width / 2 }, "el");
+	tl.from(imgCorn, { duration: elDuration, x: "+=" + imgCorn.width / 4 }, "el");
 
 	var imgLeaf = maskerItem("mask-leaf");
-	tl.from(imgLeaf, { duration: elDuration, x: "-=" + imgLeaf.width / 2 }, "el");
+	tl.from(imgLeaf, { duration: elDuration, x: "-=" + imgLeaf.width / 4 }, "el");
 
 	var imgWheat = maskerItem("mask-wheat");
-	tl.from(imgWheat, { duration: elDuration, y: "+=" + imgWheat.width / 2 }, "el");
+	tl.from(imgWheat, { duration: elDuration, y: "+=" + imgWheat.width / 4 }, "el");
 
 	tl.to(".sky", { duration: elDuration, x: 0 }, "el");
 
-	tl.add("el2");
-	tl.to("#man", { duration: 1, x: "-=50" }, "el2");
-	tl.to(".cover2", { duration: 1, x: 0 }, "el2");
 	return tl;
 }
 
@@ -50,7 +47,7 @@ function init() {
 
 	var tl = new TimelineMax();
 
-	tl.set(".frame1", { opacity: 1 });
+	tl.set(".frame1", { opacity: 1 }, "+=1");
 
 	maskerAll();
 	tl.to(".t1", { duration: .3, opacity: 0 }, "+=3");
@@ -59,7 +56,11 @@ function init() {
 	tl.to(".t2", { duration: .3, opacity: 0 }, "+=4");
 	tl.from(".t3", { duration: .3, opacity: 0 });
 
-	tl.to([".t3", ".logo_1"], { duration: .3, opacity: 0 }, "+=4");
+	tl.add("end", "+=4");
+	tl.to("#man", { duration: 1, x: "-=50" }, "end");
+	tl.to(".cover2", { duration: 1, x: 0 }, "end");
+
+	tl.to([".t3", ".logo_1"], { duration: .3, opacity: 0 }, "end");
 	tl.from([".t4", ".logo_2a", ".logo_2b"], { duration: .3, opacity: 0 });
 
 	return tl;

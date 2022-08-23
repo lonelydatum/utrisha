@@ -1,0 +1,31 @@
+@import '../../../_common/styles/common.scss';
+
+#banner{
+ width: 300px;
+ height: 250px;
+ 
+}
+
+.masker{
+	overflow: hidden;
+}
+
+#mask-leaf{
+	@include pos(175, 112);
+}
+
+#mask-corn{
+	@include pos(50, 101);
+}
+
+#mask-wheat{
+	@include pos(114.4, 162.3);
+}
+
+.cover2{
+	@include pos-scale(110, 0, .5);
+}
+
+.sky{
+	@include pos-scale(-25, 0, .5);
+}

@@ -218,6 +218,8 @@ canvas, .text, .frame, .outline, img {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
+  width: 44px;
+  height: 63px;
 }
 
 #mask-corn {
@@ -229,17 +231,21 @@ canvas, .text, .frame, .outline, img {
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
+  width: 80px;
+  height: 59px;
 }
 
 #mask-wheat {
-  -webkit-transform: translate(114.4px, 162.3px);
-  -ms-transform: translate(114.4px, 162.3px);
-  transform: translate(114.4px, 162.3px);
+  -webkit-transform: translate(114px, 162px);
+  -ms-transform: translate(114px, 162px);
+  transform: translate(114px, 162px);
   -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
   -webkit-perspective: 1000px;
   perspective: 1000px;
   position: absolute;
+  width: 32px;
+  height: 44px;
 }
 
 .cover2 {

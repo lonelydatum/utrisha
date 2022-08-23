@@ -20,9 +20,9 @@ function maskerItem(id) {
 	var el = document.getElementById(id);
 	var elImage = el.querySelector("img");
 
-	tl.set(el, { width: elImage.width / 2, height: elImage.height / 2 });
+	// tl.set(el, {width:elImage.width/2, height:elImage.height/2 })
 
-	return elImage;
+	return el;
 }
 
 function maskerAll() {
@@ -30,13 +30,13 @@ function maskerAll() {
 	var elDuration = 12;
 	tl.add("el");
 	var imgCorn = maskerItem("mask-corn");
-	tl.from(imgCorn, { duration: elDuration, x: "+=" + imgCorn.width / 4 }, "el");
+	tl.from("#mask-corn img", { duration: elDuration, x: "+=" + imgCorn.offsetWidth / 2 }, "el");
 
 	var imgLeaf = maskerItem("mask-leaf");
-	tl.from(imgLeaf, { duration: elDuration, x: "-=" + imgLeaf.width / 4 }, "el");
+	tl.from("#mask-leaf img", { duration: elDuration, x: "-=" + imgLeaf.offsetWidth / 2 }, "el");
 
 	var imgWheat = maskerItem("mask-wheat");
-	tl.from(imgWheat, { duration: elDuration, y: "+=" + imgWheat.width / 4 }, "el");
+	tl.from("#mask-wheat img", { duration: elDuration, y: "+=" + imgWheat.offsetWidth / 2 }, "el");
 
 	tl.to(".sky", { duration: elDuration, x: 0 }, "el");
 
@@ -47,7 +47,7 @@ function init() {
 
 	var tl = new TimelineMax();
 
-	tl.set(".frame1", { opacity: 1 }, "+=1");
+	tl.set(".frame1", { opacity: 1 });
 
 	maskerAll();
 	tl.to(".t1", { duration: .3, opacity: 0 }, "+=3");
@@ -59,7 +59,7 @@ function init() {
 	tl.add("end", "+=4");
 	tl.to("#man", { duration: 1, x: "-=50" }, "end");
 	tl.to(".cover2", { duration: 1, x: 0 }, "end");
-
+	tl.to(".sky", { duration: 1, x: -45 }, "end");
 	tl.to([".t3", ".logo_1"], { duration: .3, opacity: 0 }, "end");
 	tl.from([".t4", ".logo_2a", ".logo_2b"], { duration: .3, opacity: 0 });
 

@@ -74,6 +74,7 @@ function log_free(projectName){
         .pipe(replace("takanaClient.run({host: 'localhost:48626'});", ''))
         .pipe(replace("../_common/images/"+size+"/"+name+"/"+lang+"/", ''))
         .pipe(replace("../_common/images/"+size+"/"+name+"/", ''))
+        .pipe(replace("../_common/images/"+size+"/"+eastWest+"/", ''))
         .pipe(replace("../_common/images/"+size+"/", ''))
         .pipe(replace("txt/", ''))
         .pipe(replace("<title>", '<title>Created: '+moment().format('MMM D, h:mm')))

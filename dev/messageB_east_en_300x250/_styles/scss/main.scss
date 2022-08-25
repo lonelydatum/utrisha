@@ -1,0 +1,32 @@
+@import '../../../_common/styles/common.scss';
+
+#banner{
+ width: 300px;
+ height: 250px;
+ 
+}
+
+.masker{
+	overflow: hidden;
+}
+
+
+#mask-left{
+	@include pos(50, 101);	
+}
+
+#mask-right{
+	@include pos(175, 112);	
+}
+
+#mask-bottom{
+	@include pos(114, 162);	
+}
+
+.cover2{
+	@include pos-scale(110, 0, .5);
+}
+
+.sky{
+	@include pos-scale(-25, 0, .5);
+}

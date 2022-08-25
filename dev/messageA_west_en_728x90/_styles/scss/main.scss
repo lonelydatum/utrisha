@@ -1,0 +1,37 @@
+@import '../../../_common/styles/common.scss';
+
+#banner{
+ width: 728px;
+ height: 90px;
+ 
+}
+
+.masker{
+	overflow: hidden;
+}
+
+
+#mask-left{
+	@include pos(62, 80);	
+}
+
+#mask-right{
+	@include pos(168, 89);	
+}
+
+#mask-bottom{
+	@include pos(114, 162);	
+}
+
+.cover2{
+	@include pos-scale(110, 0, .5);
+}
+
+.sky{
+	@include pos-scale(-25, 0, .5);
+}
+
+#man{
+	@include pos(0, -10);
+	z-index: 99
+}

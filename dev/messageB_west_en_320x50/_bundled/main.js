@@ -101,7 +101,7 @@ function end300x250() {
 	tl.add("end", "+=" + readAB[2]);
 	tl.to("#man", { duration: 1, x: "-=50" }, "end");
 	tl.to(".cover2", { duration: 1, x: 0 }, "end");
-	// tl.to(".sky", {duration:1, x:-45 }, "end")
+	tl.to(".sky", { duration: 1, x: -45 }, "end");
 	tl.to([".t3", ".logo_1"], { duration: .3, opacity: 0 }, "end");
 	tl.from([".t4", ".logo_2a", ".logo_2b"], { duration: .3, opacity: 0 });
 	return tl;
@@ -112,7 +112,7 @@ function end728x90() {
 	tl.add("end", "+=" + readAB[2]);
 
 	tl.to(".cover2", { duration: 1, x: 0 }, "end");
-	// tl.to(".sky", {duration:1, x:-45 }, "end")
+
 	tl.to([".t3", ".logo_1"], { duration: .3, opacity: 0 }, "end");
 	tl.from([".t4", ".logo_2a", ".logo_2b"], { duration: .3, opacity: 0 });
 	return tl;
@@ -140,6 +140,7 @@ function init() {
 	tl.from(".t3", { duration: .3, opacity: 0 });
 
 	if (size === "300x250") {
+		TweenLite.to(".sky", { duration: elDuration, x: 0 });
 		tl.add(end300x250());
 	} else if (size === "300x600") {
 		TweenLite.from("#man", { duration: elDuration, y: "+=10" }, "end");
